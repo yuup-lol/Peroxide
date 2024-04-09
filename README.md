@@ -1,10 +1,10 @@
 ## Script
 ```lua
-local owner = "Upbolt"
+local owner = "Deni210"
 local branch = "revision"
 
 local function webImport(file)
-    return loadstring(game:HttpGetAsync(("https://raw.githubusercontent.com/%s/Hydroxide/%s/%s.lua"):format(owner, branch, file)), file .. '.lua')()
+    return loadstring(game:HttpGetAsync(("https://raw.githubusercontent.com/%s/Hydroxide-Wave-Fix/%s/%s.lua"):format(owner, branch, file)), file .. '.lua')()
 end
 
 webImport("init")
@@ -32,7 +32,7 @@ webImport("ui/main")
 * Constant Scanner
     * View/Modify Constants
     * View information of closure
-* Script Scanner
+* Script Scanner (removed because decompressing bytecode errors in wave)
     * View general information of scripts (source, protos, constants, etc.)
     * Retrieve all protos found in GC
 * Module Scanner
