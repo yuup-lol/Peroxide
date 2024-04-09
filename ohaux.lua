@@ -29,7 +29,7 @@ end
 
 local function searchClosure(script, name, upvalueIndex, constants)
     for _i, v in pairs(getGc()) do
-        if getfenv(v) then
+        if type(v) ~= "CFrame"
             local parentScript = rawget(getfenv(v), "script")
     
             if type(v) == "function" and 
