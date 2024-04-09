@@ -430,6 +430,9 @@ local closureConstants = %s
 
 local closure = aux.searchClosure(scriptPath, closureName, upvalueIndex, closureConstants)
 local value = YOUR_NEW_VALUE_HERE
+if closure == "!![] protected call returned an error" then
+    return error("Encountered an error while finding the funmction.")
+end
 ]]
 
     if elementIndex and elementIndex ~= "nil" then
