@@ -31,7 +31,7 @@ local function searchClosure(script, name, upvalueIndex, constants)
     for _i, v in pairs(getGc()) do
         pcall(function()
             local parentScript = rawget(getfenv(v), "script")
-    
+
             if type(v) == "function" and 
                 isLClosure(v) and 
                 not isXClosure(v) and 
@@ -47,8 +47,8 @@ local function searchClosure(script, name, upvalueIndex, constants)
                 end
             end
         end)
-        return "!![] protected call returned an error"
     end
+    return "?"
 end
 
 aux.placeholderUserdataConstant = placeholderUserdataConstant
