@@ -47,7 +47,7 @@ local function searchClosure(script, name, upvalueIndex, constants)
                 end
             end
         end)
-        return "!![] Error while protected calling!
+        return "!![] protected call returned an error
     end
 end
 
