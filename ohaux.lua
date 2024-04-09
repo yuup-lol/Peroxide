@@ -29,7 +29,7 @@ end
 
 local function searchClosure(script, name, upvalueIndex, constants)
     for _i, v in pairs(getGc()) do
-        if type(v) ~= "CFrame"
+        pcall(function()
             local parentScript = rawget(getfenv(v), "script")
     
             if type(v) == "function" and 
@@ -46,7 +46,8 @@ local function searchClosure(script, name, upvalueIndex, constants)
                     return v
                 end
             end
-        end
+        end)
+        return "!![] Error while protected calling!
     end
 end
 
