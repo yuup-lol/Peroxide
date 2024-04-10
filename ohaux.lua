@@ -32,8 +32,8 @@ local function searchClosure(script, name, upvalueIndex, constants)
         --local parentScript = rawget(getfenv(v), "script")
         if type(v) == "function" and 
             isLClosure(v) and 
-            not isXClosure(v) and 
-            --((script == nil and parentScript.Parent == nil) or script == parentScript) 
+            not isXClosure(v) 
+            -- and ((script == nil and parentScript.Parent == nil) or script == parentScript) 
             and pcall(getUpvalue, v, upvalueIndex)
         then
             if ((name and name ~= "Unnamed function") and getInfo(v).name == name) and matchConstants(v, constants) then
