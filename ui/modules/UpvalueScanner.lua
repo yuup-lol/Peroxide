@@ -431,7 +431,7 @@ local closureConstants = %s
 local closure = aux.searchClosure(scriptPath, closureName, upvalueIndex, closureConstants)
 local value = YOUR_NEW_VALUE_HERE
 if closure == "?" then
-    return error("Couldn't find the function :c)
+    return error("Couldn't find the function :c")
 end
 ]]
 
