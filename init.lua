@@ -184,11 +184,13 @@ end
 
 useMethods(globalMethods)
 
+local HttpService = game:GetService("HttpService")
+
 local function webGet(file)
-    return game:HttpGetAsync(("http://peroxide.InsaneCheats.xyz/%s"):format(file))
+    return --game:HttpGetAsync(("http://peroxide.InsaneCheats.xyz/%s"):format(file))
+    return HttpService:JSONEncode([{"url":"https://api.github.com/repos/yuup-lol/Peroxide/releases/163679272","assets_url":"https://api.github.com/repos/yuup-lol/Peroxide/releases/163679272/assets","upload_url":"https://uploads.github.com/repos/yuup-lol/Peroxide/releases/163679272/assets{?name,label}","html_url":"https://github.com/yuup-lol/Peroxide/releases/tag/1.36","id":163679272,"author":{"login":"yuup-lol","id":174159325,"node_id":"U_kgDOCmF13Q","avatar_url":"https://avatars.githubusercontent.com/u/174159325?v=4","gravatar_id":"","url":"https://api.github.com/users/yuup-lol","html_url":"https://github.com/yuup-lol","followers_url":"https://api.github.com/users/yuup-lol/followers","following_url":"https://api.github.com/users/yuup-lol/following{/other_user}","gists_url":"https://api.github.com/users/yuup-lol/gists{/gist_id}","starred_url":"https://api.github.com/users/yuup-lol/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/yuup-lol/subscriptions","organizations_url":"https://api.github.com/users/yuup-lol/orgs","repos_url":"https://api.github.com/users/yuup-lol/repos","events_url":"https://api.github.com/users/yuup-lol/events{/privacy}","received_events_url":"https://api.github.com/users/yuup-lol/received_events","type":"User","site_admin":false},"node_id":"RE_kwDOMRL9pM4JwYwo","tag_name":"1.36","target_commitish":"revision","name":"1.36","draft":false,"prerelease":false,"created_at":"2024-07-02T21:11:12Z","published_at":"2024-07-02T21:20:32Z","assets":[],"tarball_url":"https://api.github.com/repos/yuup-lol/Peroxide/tarball/1.36","zipball_url":"https://api.github.com/repos/yuup-lol/Peroxide/zipball/1.36","body":"**Full Changelog**: https://github.com/yuup-lol/Peroxide/commits/1.36"}])
 end
 
-local HttpService = game:GetService("HttpService")
 local releaseInfo = HttpService:JSONDecode(webGet("latestupdate"))[1]
 
 if readFile and writeFile then
